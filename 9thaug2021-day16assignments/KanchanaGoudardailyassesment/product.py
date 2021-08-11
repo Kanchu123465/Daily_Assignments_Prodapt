@@ -35,7 +35,7 @@ try:
 
             dict1={"pcode":pcode,"pname":pname,"des":des,"mfy":mfy,"conatctnumber":contactnumber,"wholesaleprice":wholesaleprice,"retailprice":retailprice} 
             product_list.append(dict1)
-            
+            return dict1
 
     
     obj1=ProductDetails()    
@@ -67,7 +67,7 @@ try:
             obj1.AddProductDetails(pcode,pname,des,mfy,contactnumber,wholesaleprice,retailprice)
                     # else:
                         # logging.error("Invalid data Enter it again")
-            collection_name.insert_many(product_list)
+            collection_name.insert_one(dict1)
 
                 
         if choice==2:
